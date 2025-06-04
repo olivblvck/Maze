@@ -18,25 +18,28 @@ import java.util.Map;
 public class ParametersActivity extends AppCompatActivity {
 
     private Spinner spinner;
-    private ArrayList<String> mazeKeys = new ArrayList<>();
+    private ArrayList<String> mazeKeys = new ArrayList<>(); // Holds the keys of saved mazes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parameters);
+        setContentView(R.layout.activity_parameters); // Set the layout for maze selection
 
         spinner = findViewById(R.id.spinner_mazes);
         Button buttonPlay = findViewById(R.id.button_play);
 
+        // Load saved mazes from SharedPreferences
         SharedPreferences prefs = getSharedPreferences("mazes", MODE_PRIVATE);
         Map<String, ?> allMazes = prefs.getAll();
 
+        // If no mazes are found, show a message and exit
         if (allMazes.isEmpty()) {
-            Toast.makeText(this, "Brak zapisanych labiryntów", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No saved mazes", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
 
+        // Add maze keys to the spinner
         mazeKeys.addAll(allMazes.keySet());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -44,6 +47,7 @@ public class ParametersActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        // Launch GameActivity with the selected maze data
         buttonPlay.setOnClickListener(v -> {
             String selectedKey = (String) spinner.getSelectedItem();
             String mazeData = prefs.getString(selectedKey, null);
@@ -55,9 +59,11 @@ public class ParametersActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Back button returns to HomeActivity
         Button backButton = findViewById(R.id.button_back);
         backButton.setOnClickListener(v -> {
-            finish(); // zamyka tę aktywność, wraca do HomeActivity
+            finish();
         });
 
     }

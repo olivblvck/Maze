@@ -2,26 +2,36 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/text_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gra rozpoczęta!"
+        android:text="Game started!"
         android:textSize="18sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
 
-    <com.example.maze.MazeView
-        android:id="@+id/maze_view"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#eeeeee" />
+        android:layout_gravity="center"
+        android:background="#f0f0f0">
+
+        <com.example.maze.MazeView
+            android:id="@+id/maze_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
 
     <Button
         android:id="@+id/button_back"
-        android:text="Wróć do menu"
+        android:text="Go back to menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -70,7 +80,7 @@
         android:id="@+id/button_rotate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Obróć ekran"
+        android:text="Rotate screen"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"/>
 

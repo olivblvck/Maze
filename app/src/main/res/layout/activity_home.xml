@@ -1,22 +1,24 @@
 <!-- res/layout/activity_home.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:gravity="center" android:padding="24dp">
+    android:layout_height="match_parent" android:gravity="center"
+    android:background="@android:color/white"
+    android:padding="24dp">
 
-    <TextView android:text="Labirynt Gra"
+    <TextView android:text="Maze game"
         android:textSize="32sp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button android:id="@+id/button_start_game"
-        android:text="Nowa gra"
+        android:text="New maze"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"/>
     <Button
         android:id="@+id/button_parameters"
-        android:text="Wybierz zapisany labirynt"
+        android:text="Choose saved maze"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"/>
@@ -25,7 +27,7 @@
         android:id="@+id/button_rules"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zasady gry"
+        android:text="Game rules"
         android:layout_marginTop="16dp"/>
 
 

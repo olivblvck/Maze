@@ -1,14 +1,16 @@
-<!-- res/layout/activity_generator.xml -->
+<!-- res/layout/activity_generator.xml  TODO: DODAC BIALE TLO-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp">
+    android:layout_height="match_parent" android:padding="16dp"
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/label_size"
-        android:text="Rozmiar: 20x20"
+        android:text="Size: 20x20"
         android:textSize="18sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"/>
 
     <SeekBar
         android:id="@+id/seekbar_size"
@@ -17,24 +19,25 @@
 
     <Button
         android:id="@+id/button_generate"
-        android:text="Generuj labirynt"
+        android:text="Generate maze"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/button_save"
-        android:text="Zapisz labirynt"
+        android:text="Save maze"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp" />
 
     <Button
         android:id="@+id/button_back"
-        android:text="Wróć do menu"
+        android:text="Go back to menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"/>
 
 
     <com.example.maze.MazeView
