@@ -152,9 +152,8 @@ Author: Oliwia Witkowska
 
 ## 📚 References
 
-- Android Developers: [https://developer.android.com](https://developer.android.com)
-- Sensor documentation: [https://developer.android.com/guide/topics/sensors/sensors_overview][https://developer.android.com/guide/topics/sensors/sensors_overview]
-- Maze generation algorithm: [https://en.wikipedia.org/wiki/Maze_generation_algorithm]
+- Sensor documentation: https://developer.android.com/guide/topics/sensors/sensors_overview 
+- Maze generation algorithm: https://en.wikipedia.org/wiki/Maze_generation_algorithm
 - Lecture slides, laboratory instructions and guidelines
 - Stack Overflow threads related to handling screen rotation and accelerometer events
 
