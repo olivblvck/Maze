@@ -104,4 +104,9 @@ public class MazeView extends View {
                 offsetY + playerY * cellSize + cellSize / 2,
                 cellSize / 3, playerPaint);
     }
+    public void setVisitedPath(List<List<Integer>> visited) {
+        this.visited = visited;
+        invalidate();
+    }
+
 }

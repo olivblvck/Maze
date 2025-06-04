@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.os.Handler;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -73,13 +77,14 @@ public class GameActivity extends AppCompatActivity {
         size = maze.length;
         mazeView.setMaze(maze);
         mazeView.setPlayerPosition(x, y);
+        mazeView.setVisitedPath(visited);
+
 
         Button up = findViewById(R.id.button_up);
         Button down = findViewById(R.id.button_down);
         Button left = findViewById(R.id.button_left);
         Button right = findViewById(R.id.button_right);
         Button backBtn = findViewById(R.id.button_back);
-        Button rotateBtn = findViewById(R.id.button_rotate);
 
         up.setOnClickListener(v -> move(0, -1, status));
         down.setOnClickListener(v -> move(0, 1, status));
@@ -88,18 +93,16 @@ public class GameActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(v -> finish());
 
-        rotateBtn.setOnClickListener(v -> {
-            if (currentOrientation == Configuration.ORIENTATION_PORTRAIT) {
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-            } else {
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            }
-        });
+        Button rotateBtn = findViewById(R.id.button_rotate);
+        rotateBtn.setOnClickListener(v -> rotateScreen());
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         if (sensorManager != null) {
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         }
+
+
+
     }
 
     private int[][] parseMaze(String raw) {
@@ -236,4 +239,45 @@ public class GameActivity extends AppCompatActivity {
         super.onPause();
         sensorManager.unregisterListener(sensorListener);
     }
+
+    private void rotateScreen() {
+        int currentOrientation = getResources().getConfiguration().orientation;
+        if (currentOrientation == Configuration.ORIENTATION_PORTRAIT) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+
+        new Handler().postDelayed(this::reloadLayout, 500);
+    }
+
+
+    private void reloadLayout() {
+        setContentView(R.layout.activity_game);
+
+        // ponowna inicjalizacja widoków
+        mazeView = findViewById(R.id.maze_view);
+        TextView status = findViewById(R.id.text_status);
+        Button up = findViewById(R.id.button_up);
+        Button down = findViewById(R.id.button_down);
+        Button left = findViewById(R.id.button_left);
+        Button right = findViewById(R.id.button_right);
+        Button backBtn = findViewById(R.id.button_back);
+        Button rotateBtn = findViewById(R.id.button_rotate);
+
+        // przyciski
+        up.setOnClickListener(v -> move(0, -1, status));
+        down.setOnClickListener(v -> move(0, 1, status));
+        left.setOnClickListener(v -> move(-1, 0, status));
+        right.setOnClickListener(v -> move(1, 0, status));
+        backBtn.setOnClickListener(v -> finish());
+        rotateBtn.setOnClickListener(v -> rotateScreen());
+
+        // przywrócenie stanu
+        mazeView.setMaze(maze);
+        mazeView.setPlayerPosition(x, y);
+        mazeView.setVisitedPath(visited);
+
+    }
+
 }
