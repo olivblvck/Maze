@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gra rozpoczęta!"
+        android:textSize="18sp"
+        android:gravity="center" />
+
+    <com.example.maze.MazeView
+        android:id="@+id/maze_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#eeeeee" />
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <!-- Lewa kolumna: przyciski funkcyjne -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wróć do menu"
+                android:visibility="gone"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/button_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obróć ekran"
+                android:layout_marginBottom="12dp" />
+        </LinearLayout>
+
+        <!-- Prawa kolumna: strzałki -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_up"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="↑" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <Button
+                    android:id="@+id/button_left"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="←" />
+
+                <Button
+                    android:id="@+id/button_down"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="↓" />
+
+                <Button
+                    android:id="@+id/button_right"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="→" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,32 @@
+<!-- res/layout/activity_home.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:gravity="center" android:padding="24dp">
+
+    <TextView android:text="Labirynt Gra"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/button_start_game"
+        android:text="Nowa gra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"/>
+    <Button
+        android:id="@+id/button_parameters"
+        android:text="Wybierz zapisany labirynt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/button_rules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zasady gry"
+        android:layout_marginTop="16dp"/>
+
+
+</LinearLayout>
