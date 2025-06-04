@@ -140,6 +140,5 @@ This ensures that gameplay continuity is maintained regardless of orientation ch
 |--------------|--------------|--------------|--------------|
 | ![home](screenshots/1.png) | ![level](screenshots/2.png) | ![game](screenshots/3.png) | ![home](screenshots/4.png) |
 | **Playing game** | **Game won** | **Game rules** | |
-|--------------|--------------|--------------|--------------|
- | ![level](screenshots/5.png) | ![game](screenshots/6.png) |![game](screenshots/7.png) | |
+| ![level](screenshots/5.png) | ![game](screenshots/6.png) |![game](screenshots/7.png) | |
 
