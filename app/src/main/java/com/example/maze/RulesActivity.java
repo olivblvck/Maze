@@ -14,18 +14,18 @@ public class RulesActivity extends AppCompatActivity {
         // Display the game rules in the text view
         TextView textView = findViewById(R.id.text_rules);
         textView.setText(
-                "CEL GRY:\n" +
-                        "• Twoim zadaniem jest przejście labiryntu od punktu startowego do mety (zielone pole).\n" +
-                        "• Czerwona kropka to twoja pozycja w labiryncie.\n" +
-                        "• Zielony punkt w prawym dolnym rogu to meta – kiedy na nią dotrzesz, wygrasz!\n\n" +
+                "OBJECTIVE:\n\n" +
+                        "• Your goal is to navigate through the maze from the starting point to the finish point (the green tile).\n" +
+                        "• The red dot represents your current position in the maze.\n" +
+                        "• The green dot in the bottom-right corner is the finish point – reach it to win!\n\n" +
 
-                        "STEROWANIE:\n" +
-                        "Możesz poruszać się na dwa sposoby:\n" +
-                        "   • Strzałkami na ekranie (↑ ↓ ← →)\n" +
-                        "   • Przechylając telefon w odpowiednią stronę (akcelerometr)\n\n" +
+                        "CONTROLS:\n\n" +
+                        "You can move in two ways:\n" +
+                        "   • By tapping the on-screen arrow buttons \n \t (↑ ↓ ← →)\n" +
+                        "   • By tilting your phone in the desired direction (accelerometer)\n\n" +
 
-                        "ZAPIS LABIRYNTU:\n" +
-                        "• Wygenerowany labirynt możesz zapisać i zagrać w niego później.\n"
+                        "MAZE SAVING:\n\n" +
+                        "• You can save a generated maze and play it later.\n\n\n\n"
         );
 
         // Return to the previous screen when button is clicked
